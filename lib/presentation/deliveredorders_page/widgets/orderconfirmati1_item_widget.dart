@@ -1,4 +1,4 @@
-import '../controller/cancelledorders_controller.dart';
+import '../controller/deliveredorders_controller.dart';
 import '../models/orderconfirmati1_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:seller_app_example/core/app_export.dart';
@@ -14,7 +14,7 @@ class Orderconfirmati1ItemWidget extends StatelessWidget {
 
   Orderconfirmati1ItemModel orderconfirmati1ItemModelObj;
 
-  var controller = Get.find<CancelledordersController>();
+  var controller = Get.find<DeliveredordersController>();
 
   @override
   Widget build(BuildContext context) {
@@ -47,12 +47,12 @@ class Orderconfirmati1ItemWidget extends StatelessWidget {
                     right: 21,
                     bottom: 1,
                   ),
-                  decoration: AppDecoration.fillRedA.copyWith(
+                  decoration: AppDecoration.fillGreenA.copyWith(
                     borderRadius: BorderRadiusStyle.circleBorder13,
                   ),
                   child: Text(
                     "lbl10".tr,
-                    style: CustomTextStyles.bodyMediumWhiteA700,
+                    style: theme.textTheme.bodyMedium,
                   ),
                 ),
                 Spacer(),
@@ -84,7 +84,7 @@ class Orderconfirmati1ItemWidget extends StatelessWidget {
               left: 8,
               top: 11,
               right: 2,
-              bottom: 1,
+              bottom: 2,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -96,7 +96,7 @@ class Orderconfirmati1ItemWidget extends StatelessWidget {
                   children: [
                     Obx(
                       () => Text(
-                        orderconfirmati1ItemModelObj.deliveryDateTxt.value,
+                        orderconfirmati1ItemModelObj.Txt.value,
                         style: theme.textTheme.bodyLarge,
                       ),
                     ),
@@ -121,7 +121,7 @@ class Orderconfirmati1ItemWidget extends StatelessWidget {
                   padding: getPadding(
                     left: 7,
                     top: 10,
-                    bottom: 7,
+                    bottom: 6,
                   ),
                   child: Text(
                     "lbl13".tr,
