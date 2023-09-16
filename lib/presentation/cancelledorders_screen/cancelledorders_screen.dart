@@ -1,6 +1,6 @@
-import '../cancelledorders_screen/widgets/orderconfirmati1_item_widget.dart';
+import '../cancelledorders_screen/widgets/cancelledorders_item_widget.dart';
 import 'controller/cancelledorders_controller.dart';
-import 'models/orderconfirmati1_item_model.dart';
+import 'models/cancelledorders_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:seller_app_example/core/app_export.dart';
 
@@ -112,14 +112,14 @@ class CancelledordersScreen extends GetWidget<CancelledordersController> {
                           );
                         },
                         itemCount: controller.cancelledordersModelObj.value
-                            .orderconfirmati1ItemList.value.length,
+                            .cancelledordersItemList.value.length,
                         itemBuilder: (context, index) {
-                          Orderconfirmati1ItemModel model = controller
+                          CancelledordersItemModel model = controller
                               .cancelledordersModelObj
                               .value
-                              .orderconfirmati1ItemList
+                              .cancelledordersItemList
                               .value[index];
-                          return Orderconfirmati1ItemWidget(
+                          return CancelledordersItemWidget(
                             model,
                           );
                         },

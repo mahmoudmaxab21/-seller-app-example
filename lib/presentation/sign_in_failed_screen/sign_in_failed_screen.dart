@@ -43,7 +43,7 @@ class SignInFailedScreen extends GetWidget<SignInFailedController> {
                 ),
                 child: Text(
                   "msg2".tr,
-                  style: CustomTextStyles.titleLargePrimaryRegular,
+                  style: CustomTextStyles.titleLargePrimary,
                 ),
               ),
               Container(

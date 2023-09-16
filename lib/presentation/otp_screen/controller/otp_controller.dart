@@ -9,11 +9,14 @@ import 'package:flutter/material.dart';
 class OtpController extends GetxController {
   TextEditingController tfController = TextEditingController();
 
+  TextEditingController tfController1 = TextEditingController();
+
   Rx<OtpModel> otpModelObj = OtpModel().obs;
 
   @override
   void onClose() {
     super.onClose();
     tfController.dispose();
+    tfController1.dispose();
   }
 }

@@ -58,7 +58,7 @@ class OrderconfirmatiItemWidget extends StatelessWidget {
                 Spacer(),
                 Padding(
                   padding: getPadding(
-                    top: 2,
+                    top: 10,
                     bottom: 4,
                   ),
                   child: Text(

@@ -7,4 +7,11 @@ import 'package:seller_app_example/presentation/splash_screen/models/splash_mode
 /// current splashModelObj
 class SplashController extends GetxController {
   Rx<SplashModel> splashModelObj = SplashModel().obs;
+
+  @override
+  void onReady() {
+    Get.toNamed(
+      AppRoutes.signInPasswordScreen,
+    );
+  }
 }
