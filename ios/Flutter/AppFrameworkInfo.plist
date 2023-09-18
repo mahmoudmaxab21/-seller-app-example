@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
   <key>CFBundleDevelopmentRegion</key>
+<<<<<<< HEAD
   <string>en</string>
+=======
+  <string>$(DEVELOPMENT_LANGUAGE)</string>
+>>>>>>> e5de259eade5bcfb686c29596f6237c8c3ebc55c
   <key>CFBundleExecutable</key>
   <string>App</string>
   <key>CFBundleIdentifier</key>
@@ -21,6 +25,10 @@
   <key>CFBundleVersion</key>
   <string>1.0</string>
   <key>MinimumOSVersion</key>
+<<<<<<< HEAD
   <string>11.0</string>
+=======
+  <string>9.0</string>
+>>>>>>> e5de259eade5bcfb686c29596f6237c8c3ebc55c
 </dict>
 </plist>
