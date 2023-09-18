@@ -1,23 +1,14 @@
 import 'package:seller_app_example/core/app_export.dart';
 import 'package:seller_app_example/core/utils/progress_dialog_utils.dart';
-import 'package:seller_app_example/data/models/getUserById/get_get_user_by_id_resp.dart';
+import 'package:seller_app_example/data/models/postLogin/post_post_login_resp.dart';
 
 class ApiClient extends GetConnect {
-  var url = "https://fakestoreapi.com";
+  var url = "https://e66ac4-_app-sandbox.dhiwise.co";
 
   @override
   void onInit() {
     super.onInit();
     httpClient.timeout = const Duration(seconds: 60);
-    httpClient.addRequestModifier<dynamic>((request) {
-      Map<String, String> headers = {
-        "Authorization":
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYTNmOTI0NTNjODViYzEyNjU4ZjNiZSIsInVzZXJuYW1lIjoiSnVkZ2VfQ3JvbmluIiwiaWF0IjoxNjcxNjk3MTcxfQ.hbZLKSsS6Mdj1ndhAf4rm_5we4iWYvKY1VPSo51sQRM",
-        "Content-Type": "application/json"
-      };
-      request.headers.addAll(headers);
-      return request;
-    });
   }
 
   ///method can be used for checking internet connection
@@ -35,25 +26,30 @@ class ApiClient extends GetConnect {
     return response.isOk;
   }
 
-  /// Performs API call for https://fakestoreapi.com/products
+  /// Performs API call for https://e66ac4-_app-sandbox.dhiwise.co/device/auth/login
   ///
-  /// Sends a GET request to the server's 'https://fakestoreapi.com/products' endpoint
+  /// Sends a POST request to the server's 'https://e66ac4-_app-sandbox.dhiwise.co/device/auth/login' endpoint
   /// with the provided headers and request data
-  /// Returns a [GetGetUserByIdResp] object representing the response.
+  /// Returns a [PostPostLoginResp] object representing the response.
   /// Throws an error if the request fails or an exception occurs.
-  Future<List<GetGetUserByIdResp>> getUserById() async {
+  Future<PostPostLoginResp> postLogin({
+    Map<String, String> headers = const {},
+    Map requestData = const {},
+  }) async {
     ProgressDialogUtils.showProgressDialog();
     try {
       await isNetworkConnected();
-      Response response = await httpClient.get('$url/products');
+      Response response = await httpClient.post(
+        '$url/device/auth/login',
+        headers: headers,
+        body: requestData,
+      );
       ProgressDialogUtils.hideProgressDialog();
       if (_isSuccessCall(response)) {
-        return (response.body as List)
-            .map((e) => GetGetUserByIdResp.fromJson(e))
-            .toList();
+        return PostPostLoginResp.fromJson(response.body);
       } else {
-        throw response.hasError
-            ? response.statusText!
+        throw response.body != null
+            ? PostPostLoginResp.fromJson(response.body)
             : 'Something Went Wrong!';
       }
     } catch (error, stackTrace) {

@@ -1,20 +1,20 @@
-import '../controller/deliveredorders_controller.dart';
-import '../models/deliveredorders_item_model.dart';
+import '../controller/cancelledorders_controller.dart';
+import '../models/cancelledorders_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:seller_app_example/core/app_export.dart';
 
 // ignore: must_be_immutable
-class DeliveredordersItemWidget extends StatelessWidget {
-  DeliveredordersItemWidget(
-    this.deliveredordersItemModelObj, {
+class CancelledordersItemWidget extends StatelessWidget {
+  CancelledordersItemWidget(
+    this.cancelledordersItemModelObj, {
     Key? key,
   }) : super(
           key: key,
         );
 
-  DeliveredordersItemModel deliveredordersItemModelObj;
+  CancelledordersItemModel cancelledordersItemModelObj;
 
-  var controller = Get.find<DeliveredordersController>();
+  var controller = Get.find<CancelledordersController>();
 
   @override
   Widget build(BuildContext context) {
@@ -47,12 +47,12 @@ class DeliveredordersItemWidget extends StatelessWidget {
                     right: 21,
                     bottom: 1,
                   ),
-                  decoration: AppDecoration.fillGreenA.copyWith(
+                  decoration: AppDecoration.fillRedA.copyWith(
                     borderRadius: BorderRadiusStyle.circleBorder13,
                   ),
                   child: Text(
                     "lbl10".tr,
-                    style: theme.textTheme.bodyMedium,
+                    style: CustomTextStyles.bodyMediumWhiteA700,
                   ),
                 ),
                 Spacer(),
@@ -84,7 +84,7 @@ class DeliveredordersItemWidget extends StatelessWidget {
               left: 8,
               top: 11,
               right: 2,
-              bottom: 2,
+              bottom: 1,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -96,7 +96,7 @@ class DeliveredordersItemWidget extends StatelessWidget {
                   children: [
                     Obx(
                       () => Text(
-                        deliveredordersItemModelObj.Txt.value,
+                        cancelledordersItemModelObj.Txt.value,
                         style: theme.textTheme.bodyLarge,
                       ),
                     ),
@@ -121,7 +121,7 @@ class DeliveredordersItemWidget extends StatelessWidget {
                   padding: getPadding(
                     left: 7,
                     top: 10,
-                    bottom: 6,
+                    bottom: 7,
                   ),
                   child: Text(
                     "lbl13".tr,

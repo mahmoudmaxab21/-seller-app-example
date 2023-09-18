@@ -174,7 +174,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapOtp();
+                                              onTapSigninpassword();
                                             },
                                             child: Container(
                                                 decoration:
@@ -195,7 +195,8 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "lbl_otp".tr,
+                                                                  "msg_sign_in_password"
+                                                                      .tr,
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
@@ -494,6 +495,59 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       1),
                                                               color: appTheme
                                                                   .blueGray40001))
+                                                    ]))),
+                                        GestureDetector(
+                                            onTap: () {
+                                              onTapOtp();
+                                            },
+                                            child: Container(
+                                                decoration:
+                                                    AppDecoration.fillWhiteA,
+                                                child: Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      Align(
+                                                          alignment: Alignment
+                                                              .centerLeft,
+                                                          child: Padding(
+                                                              padding:
+                                                                  getPadding(
+                                                                      left: 20,
+                                                                      top: 10,
+                                                                      right: 20,
+                                                                      bottom:
+                                                                          10),
+                                                              child: Text(
+                                                                  "lbl_otp".tr,
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: TextStyle(
+                                                                      color: appTheme
+                                                                          .orange700
+                                                                          .withOpacity(
+                                                                              1),
+                                                                      fontSize:
+                                                                          getFontSize(
+                                                                              20),
+                                                                      fontFamily:
+                                                                          'Roboto',
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w400)))),
+                                                      Padding(
+                                                          padding: getPadding(
+                                                              top: 5),
+                                                          child: Divider(
+                                                              height:
+                                                                  getVerticalSize(
+                                                                      1),
+                                                              thickness:
+                                                                  getVerticalSize(
+                                                                      1),
+                                                              color: appTheme
+                                                                  .blueGray40001))
                                                     ])))
                                       ]))))
                     ]))));
@@ -519,13 +573,13 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
     );
   }
 
-  /// Navigates to the otpScreen when the action is triggered.
+  /// Navigates to the signInPasswordScreen when the action is triggered.
 
   /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the otpScreen.
-  onTapOtp() {
+  /// push the named route for the signInPasswordScreen.
+  onTapSigninpassword() {
     Get.toNamed(
-      AppRoutes.otpScreen,
+      AppRoutes.signInPasswordScreen,
     );
   }
 
@@ -576,6 +630,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
   onTapSigninFAILED() {
     Get.toNamed(
       AppRoutes.signInFailedScreen,
+    );
+  }
+
+  /// Navigates to the otpScreen when the action is triggered.
+
+  /// When the action is triggered, this function uses the [Get] package to
+  /// push the named route for the otpScreen.
+  onTapOtp() {
+    Get.toNamed(
+      AppRoutes.otpScreen,
     );
   }
 }

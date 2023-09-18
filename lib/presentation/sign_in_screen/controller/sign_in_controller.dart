@@ -7,13 +7,13 @@ import 'package:flutter/material.dart';
 /// This class manages the state of the SignInScreen, including the
 /// current signInModelObj
 class SignInController extends GetxController {
-  TextEditingController friendphonenumbController = TextEditingController();
+  TextEditingController numberController = TextEditingController();
 
   Rx<SignInModel> signInModelObj = SignInModel().obs;
 
   @override
   void onClose() {
     super.onClose();
-    friendphonenumbController.dispose();
+    numberController.dispose();
   }
 }

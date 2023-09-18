@@ -114,6 +114,7 @@ class CustomTextStyles {
       );
   static get titleLargePrimary => theme.textTheme.titleLarge!.copyWith(
         color: theme.colorScheme.primary.withOpacity(1),
+        fontWeight: FontWeight.w400,
       );
   static get titleLargePrimaryContainer => theme.textTheme.titleLarge!.copyWith(
         color: theme.colorScheme.primaryContainer,

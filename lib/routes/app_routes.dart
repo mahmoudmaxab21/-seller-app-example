@@ -2,8 +2,8 @@ import 'package:seller_app_example/presentation/splash_screen/splash_screen.dart
 import 'package:seller_app_example/presentation/splash_screen/binding/splash_binding.dart';
 import 'package:seller_app_example/presentation/sign_in_screen/sign_in_screen.dart';
 import 'package:seller_app_example/presentation/sign_in_screen/binding/sign_in_binding.dart';
-import 'package:seller_app_example/presentation/otp_screen/otp_screen.dart';
-import 'package:seller_app_example/presentation/otp_screen/binding/otp_binding.dart';
+import 'package:seller_app_example/presentation/sign_in_password_screen/sign_in_password_screen.dart';
+import 'package:seller_app_example/presentation/sign_in_password_screen/binding/sign_in_password_binding.dart';
 import 'package:seller_app_example/presentation/home_page_screen/home_page_screen.dart';
 import 'package:seller_app_example/presentation/home_page_screen/binding/home_page_binding.dart';
 import 'package:seller_app_example/presentation/warehouse_details_screen/warehouse_details_screen.dart';
@@ -14,6 +14,8 @@ import 'package:seller_app_example/presentation/cancelledorders_screen/cancelled
 import 'package:seller_app_example/presentation/cancelledorders_screen/binding/cancelledorders_binding.dart';
 import 'package:seller_app_example/presentation/sign_in_failed_screen/sign_in_failed_screen.dart';
 import 'package:seller_app_example/presentation/sign_in_failed_screen/binding/sign_in_failed_binding.dart';
+import 'package:seller_app_example/presentation/otp_screen/otp_screen.dart';
+import 'package:seller_app_example/presentation/otp_screen/binding/otp_binding.dart';
 import 'package:seller_app_example/presentation/app_navigation_screen/app_navigation_screen.dart';
 import 'package:seller_app_example/presentation/app_navigation_screen/binding/app_navigation_binding.dart';
 import 'package:get/get.dart';
@@ -23,7 +25,7 @@ class AppRoutes {
 
   static const String signInScreen = '/sign_in_screen';
 
-  static const String otpScreen = '/otp_screen';
+  static const String signInPasswordScreen = '/sign_in_password_screen';
 
   static const String homePageScreen = '/home_page_screen';
 
@@ -38,6 +40,8 @@ class AppRoutes {
   static const String cancelledordersScreen = '/cancelledorders_screen';
 
   static const String signInFailedScreen = '/sign_in_failed_screen';
+
+  static const String otpScreen = '/otp_screen';
 
   static const String appNavigationScreen = '/app_navigation_screen';
 
@@ -59,10 +63,10 @@ class AppRoutes {
       ],
     ),
     GetPage(
-      name: otpScreen,
-      page: () => OtpScreen(),
+      name: signInPasswordScreen,
+      page: () => SignInPasswordScreen(),
       bindings: [
-        OtpBinding(),
+        SignInPasswordBinding(),
       ],
     ),
     GetPage(
@@ -98,6 +102,13 @@ class AppRoutes {
       page: () => SignInFailedScreen(),
       bindings: [
         SignInFailedBinding(),
+      ],
+    ),
+    GetPage(
+      name: otpScreen,
+      page: () => OtpScreen(),
+      bindings: [
+        OtpBinding(),
       ],
     ),
     GetPage(

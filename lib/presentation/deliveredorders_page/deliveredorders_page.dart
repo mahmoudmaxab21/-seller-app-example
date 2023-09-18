@@ -1,7 +1,7 @@
-import '../deliveredorders_page/widgets/deliveredorders_item_widget.dart';
+import '../deliveredorders_page/widgets/orderconfirmati1_item_widget.dart';
 import 'controller/deliveredorders_controller.dart';
-import 'models/deliveredorders_item_model.dart';
 import 'models/deliveredorders_model.dart';
+import 'models/orderconfirmati1_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:seller_app_example/core/app_export.dart';
 
@@ -43,14 +43,14 @@ class DeliveredordersPage extends StatelessWidget {
                   );
                 },
                 itemCount: controller.deliveredordersModelObj.value
-                    .deliveredordersItemList.value.length,
+                    .orderconfirmati1ItemList.value.length,
                 itemBuilder: (context, index) {
-                  DeliveredordersItemModel model = controller
+                  Orderconfirmati1ItemModel model = controller
                       .deliveredordersModelObj
                       .value
-                      .deliveredordersItemList
+                      .orderconfirmati1ItemList
                       .value[index];
-                  return DeliveredordersItemWidget(
+                  return Orderconfirmati1ItemWidget(
                     model,
                   );
                 },
